@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/task")
 @CrossOrigin("*")
@@ -46,6 +48,11 @@ public class TaskController {
     @GetMapping("/getById/{id}")
     public ResponseEntity<Task> getTaskById(@PathVariable(name = "id", required = true) Long id) {
         return ResponseEntity.ok(iTaskService.getTaskById(id));
+    }
+
+    @GetMapping("/getTasksByEmployeeId/{id}")
+    public ResponseEntity<List<Task>> getTasksByEmployeeId(@PathVariable(name = "id", required = true) Long id) {
+        return ResponseEntity.ok(iTaskService.getTasksByEmployeeId(id));
     }
 
 }

@@ -4,6 +4,8 @@ import com.todolist.crud.model.Task;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
+
 public interface ITaskService {
 
     public Task saveTask(Task task);
@@ -15,4 +17,6 @@ public interface ITaskService {
     public Page<Task> getAllTask(Pageable pageable);
 
     public Task getTaskById(Long id);
+
+    public List<Task> getTasksByEmployeeId(Long employeeId);
 }

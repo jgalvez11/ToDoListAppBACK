@@ -8,4 +8,5 @@ import java.util.List;
 
 @Repository
 public interface ITaskRepository extends JpaRepository<Task, Long> {
+    public List<Task> getTasksByEmployeeId(Long id);
 }

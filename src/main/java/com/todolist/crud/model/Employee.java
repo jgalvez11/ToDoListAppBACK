@@ -46,13 +46,6 @@ public class Employee {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createdAt;
 
-    @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Task> tasks;
-
-    public Employee() {
-        tasks = new ArrayList<Task>();
-    }
-
     @PrePersist
     public void prePersist() {
         createdAt = new Date();

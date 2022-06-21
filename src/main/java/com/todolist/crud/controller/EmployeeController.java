@@ -48,9 +48,4 @@ public class EmployeeController {
         return ResponseEntity.ok(iEmployeeService.getEmployeeById(id));
     }
 
-    @GetMapping("/getTasksById/{id}")
-    public ResponseEntity<Employee> getTaskByEmployeeId(@PathVariable(name = "id", required = true) Long id) {
-        return ResponseEntity.ok(iEmployeeService.getTaskByEmployeeId((id)));
-    }
-
 }

@@ -38,7 +38,8 @@ public class Task {
     @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private Date createdAt;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
+    @JoinColumn(name = "task_employee")
     private Employee employee;
 
     @PrePersist

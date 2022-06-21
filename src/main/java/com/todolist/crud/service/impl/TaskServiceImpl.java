@@ -1,5 +1,6 @@
 package com.todolist.crud.service.impl;
 
+import com.todolist.crud.model.Employee;
 import com.todolist.crud.model.Task;
 import com.todolist.crud.repository.ITaskRepository;
 import com.todolist.crud.service.ITaskService;
@@ -10,6 +11,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 public class TaskServiceImpl implements ITaskService {
@@ -96,5 +99,11 @@ public class TaskServiceImpl implements ITaskService {
         }
 
         return response;
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Task> getTasksByEmployeeId(Long employeeId) {
+        return iTaskRepository.getTasksByEmployeeId(employeeId);
     }
 }

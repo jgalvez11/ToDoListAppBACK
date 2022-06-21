@@ -87,10 +87,4 @@ public class EmployeeServiceImpl implements IEmployeeService {
     public Employee getEmployeeById(Long id) {
         return iEmployeeRepository.findById(id).orElse(null);
     }
-
-    @Override
-    @Transactional(readOnly = true)
-    public Employee getTaskByEmployeeId(Long id) {
-        return iEmployeeRepository.getEmployeeByIdWithTasks(id);
-    }
 }

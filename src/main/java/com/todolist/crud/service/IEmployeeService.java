@@ -15,6 +15,4 @@ public interface IEmployeeService {
     public Page<Employee> getAllEmployee(Pageable pageable);
 
     public Employee getEmployeeById(Long id);
-
-    public Employee getTaskByEmployeeId(Long id);
 }
